@@ -374,7 +374,7 @@
       />
       <input
         type="button"
-        value="Browse..."
+        value="Clique para anexar..."
         class="browse-button"
         onclick="document.getElementById('{buttonID}').click();"
         disabled={fieldState.disabled}
@@ -410,12 +410,7 @@
           {#if selectedFile.type.startsWith('image/')}
             <img src={blobFiles[selectedFileIdx]} alt={selectedFile.name} class="thumbnail" />
           {:else}
-            <div class="placeholder">
-              <div class="extension">
-                {selectedFile.name || "Unknown file"}
-              </div>
-              <div>Preview not supported</div>
-            </div>
+            <embed src={blobFiles[selectedFileIdx]} alt={selectedFile.name} class="thumbnail" />
           {/if}
           <div
           class="nav left"
